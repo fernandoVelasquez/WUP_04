@@ -36,9 +36,26 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+   
+#### Using ggplot
+
+```{r}
+basicCN <- ggplot(GSSdata,aes(x=DEGREE,y=WORDSUM))
+
+basicCN + geom_boxplot()
+```
+  
+From what we can see the people with the Graduate degree have a better word sum than people with a High school and LT High School degree .    
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+favstats(WORDSUM~DEGREE,data=GSSdata)
+```
+  
+Graduate outperform all the degrees by a mean of 10.095238, meanwhile LT High School was the worst performer with a mean of 7.750000.
 
 ## Inferential Results
 
